@@ -1,3 +1,5 @@
+# Encode() is created by Annalisa Folsom.
+# Date: October 23, 2023
 def encode(user_password):  # AMF - Defined a new function.
     enc_list = list(user_password)  # AMF - Created a list separating the digits "123" --> ["1", "2", "3"]
     index = 0
