@@ -19,6 +19,8 @@ def encode(user_password):  # AMF - Defined a new function.
 
 # Decode () is created by Deepak Guggilam
 # Date: October 24. 2023
+
+
 def decode(encoded_password):
     dec_list = list(encoded_password)   # Convert the encoded password to a list
     index = 0
@@ -27,9 +29,11 @@ def decode(encoded_password):
         index += 1
 
     for index in range(len(dec_list)):
-        dec_list[index] =  (dec_list[index] -3) % 10  # subtract 3 from each integer and make sure numbers are around 0-9 no negative numbers
+        dec_list[index] = (dec_list[index] - 3) % 10
+# subtract 3 from each integer and make sure numbers are around 0-9 no negative numbers
 
-    decoded_password  = "".join(map(str, dec_list)) # join the all the characters into a single string using map function to apply it to each element in the dec_lsit
+    decoded_password = "".join(map(str, dec_list))
+# join the all the characters into a single string using map function to apply it to each element in the dec_list
     return decoded_password
 
 
@@ -55,7 +59,6 @@ if __name__ == '__main__':
                 print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.\n")
             else:
                 print("You need to encode a password first.\n")
-
 
         elif user_input == 3:
             break
