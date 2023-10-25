@@ -10,7 +10,10 @@ def encode(user_password):  # AMF - Defined a new function.
         index += 1
     for element in enc_list:  # AMF - Loop to add 3 to integers [1, 2, 3] --> [3, 5, 6]
         enc_list[index_2] = element + 3
+        if enc_list[index_2] >= 10:  # AMF - If adding 3 to a number is two digits, then take the num in the ones place.
+            enc_list[index_2] = enc_list[index_2] % 10
         index_2 += 1
+
     for element in enc_list:  # AMF -  Loop to change the integers to strings [3, 5, 6] --> ["3", "5", "6"]
         enc_list[index_3] = str(element)
         index_3 += 1
